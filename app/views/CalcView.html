@@ -1,4 +1,4 @@
-{extends file=$conf->root_path|cat:"/templates/main.html"}
+{extends file="main.html"}
 
 {block name=content}
 
@@ -9,7 +9,7 @@
 
 		<div class="row">
 			
-			<form action="{$conf->app_url}/app/calc_kred.php" method="post" class="pure-form pure-form-stacked">
+			<form action="{$conf->action_root}calcCompute" method="post" class="pure-form pure-form-stacked">
 				<legend>Kalkulator kredytu</legend><br/><br/>
 
 					<fieldset>
@@ -34,9 +34,8 @@
 					<label for="y">Lat: </label>
 						<input id="y" type="text" name="y" value="{$form->y}"/><br/>
 					
-						
-						<button type="submit" value="Oblicz" class="pure-button pure-button-primary">Oblicz</button>
 					</fieldset>
+					<button type="submit" class="pure-button pure-button-primary">Oblicz</button>
 			</form>
 			
 		</div> <!-- /row -->
