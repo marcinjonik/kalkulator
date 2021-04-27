@@ -21,8 +21,7 @@
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="#">Home</a></li>
-					<li><a href="{$conf->app_url}/app/inna_chroniona.php">Kolejna chroniona strona</a></li>
-					<li><a class="btn" href="{$conf->app_url}/app/security/logout.php">Wyloguj</a></li>
+					<li><a href="{$conf->action_url}logout"  class="btn">Wyloguj</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>

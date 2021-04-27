@@ -1,4 +1,4 @@
-{extends file="main.html"}
+{extends file="main.tpl"}
 
 {block name=content}
 
@@ -8,7 +8,7 @@
 		<br/>
 
 		<div class="row">
-			
+
 			<form action="{$conf->action_root}calcCompute" method="post" class="pure-form pure-form-stacked">
 				<legend>Kalkulator kredytu</legend><br/><br/>
 
@@ -39,41 +39,15 @@
 			</form>
 			
 		</div> <!-- /row -->
+		
 		<div class="row">
+		{include file='messages.tpl'}
 
-			{* wyświeltenie listy błędów, jeśli istnieją *}
-			{if $msgs->isError()}
-				<h4>Wystąpiły błędy: </h4>
-				<ol>
-				{foreach $msgs->getErrors() as $err}
-				{strip}
-					<li>{$err}</li>
-				{/strip}
-				{/foreach}
-				</ol>
-			{/if}
-
-			{* wyświeltenie listy informacji, jeśli istnieją *}
-			{if $msgs->isInfo()}
-				<h4>Informacje: </h4>
-				<ol>
-				{foreach $msgs->getInfos() as $inf}
-				{strip}
-					<li>{$inf}</li>
-				{/strip}
-				{/foreach}
-				</ol>
-			{/if}
-
-			{if isset($res->result)}
-				<h4>Miesieczna rata:</h4>
-				<p>
-				{$res->result}
-				</p>
-			{/if}
-
+		{if isset($res->result)}
+			Wynik: {$res->result}
+		{/if}	
 		</div> <!-- /row -->
-
+		<span style="float:right;">użytkownik: {$user->login}, rola: {$user->role}</span>
 </div>	<!-- /container -->
 
 {/block}
